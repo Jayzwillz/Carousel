@@ -51,13 +51,13 @@ function updatePicture() {
 previousBtn.addEventListener("click", () => {
   index = (index - 1 + picture.length) % picture.length;
   updatePicture();
-  positionElements(); // Reposition after image change
+//   positionElements(); // Reposition after image change
 });
 
 nextBtn.addEventListener("click", () => {
   index = (index + 1) % picture.length;
   updatePicture();
-  positionElements(); // Reposition after image change
+//   positionElements(); // Reposition after image change
 });
 
 function positionElements() {
