@@ -3,23 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Next & Previous</title>
+    <title>Enhanced Carousel</title>
     <link rel="stylesheet" href="index.css" />
-    <script type="module" src="index.js"></script>
+    <script type="module" src="index.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Fancy Cars</h1>
+      <h1>Fancy Cars Carousel</h1>
     </header>
-    <section id="section">
-      <div class="outer-div">
-        <div id="display-div"></div>
-      </div>
-      <div class="outer-div">
-        <button id="previous">Previous</button>
-      </div>
-      <div class="outer-div">
-        <button id="next">Next</button>
+    <section id="carousel-container">
+      <div class="carousel">
+        <div id="display-div" class="carousel-image"></div>
+        <button id="previous" class="carousel-button">Previous</button>
+        <button id="next" class="carousel-button">Next</button>
       </div>
     </section>
     <footer>&copy; Jayzwillz 2025</footer>
