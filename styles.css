@@ -9,7 +9,7 @@
     background-color: #000;
     color: #fff;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,17 +23,37 @@
     font-size: 2rem;
   }
   
-  #carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  main {
     flex-grow: 1;
+  }
+  
+  #car-brands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .brand {
+    background-color: #f1356d;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .brand:hover {
+    background-color: #ff537e;
+    transform: scale(1.05);
   }
   
   .carousel {
     position: relative;
     width: 90%;
     max-width: 600px;
+    margin: 0 auto;
     overflow: hidden;
   }
   
@@ -70,10 +90,21 @@
     right: 10px;
   }
   
-  @media screen and (max-width: 600px) {
-    .carousel-button {
-      padding: 8px 15px;
-      font-size: 0.9rem;
-    }
+
+  .carousel-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #display-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Set a height for the image container */
+    background-color: #333; /* Background color for the image container */
+    border-radius: 10px;
   }
   
