@@ -621,3 +621,55 @@ if (document.body.id === "carousel") {
     nextBtn.style.display = "none";
   }
 }
+
+function navigateHome() {
+  window.location.href = "index.html";
+}
+
+
+if (document.body.id === "carousel") {
+  // Handle carousel logic
+  const urlParams = new URLSearchParams(window.location.search);
+  const brand = urlParams.get("brand");
+  const brandName = document.getElementById("brand-name");
+  const displayDiv = document.getElementById("display-div");
+  const previousBtn = document.getElementById("previous");
+  const nextBtn = document.getElementById("next");
+
+  if (brand && carImages[brand]) {
+    brandName.textContent = `${brand} Cars`;
+    let index = 0;
+
+    function updatePicture() {
+      displayDiv.innerHTML = `<img src="${
+        carImages[brand][index]
+      }" alt="${brand} Car ${index + 1}" />`;
+    }
+
+    function showPreviousImage() {
+      index = (index - 1 + carImages[brand].length) % carImages[brand].length;
+      updatePicture();
+    }
+
+    function showNextImage() {
+      index = (index + 1) % carImages[brand].length;
+      updatePicture();
+    }
+
+    previousBtn.addEventListener("click", showPreviousImage);
+    nextBtn.addEventListener("click", showNextImage);
+
+    // Add keyboard navigation
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        showPreviousImage();
+      } else if (event.key === "ArrowRight") {
+        showNextImage();
+      }
+    });
+
+    updatePicture();
+  } else {
+    brandName.textContent = "Brand Not Found";
+  }
+}
